@@ -38,7 +38,7 @@ jobs:
 
       - name: Test
         run: |
-          cd "${{ env.CMAKE_BUILD_DIR }}" && ctest -V
+          cd "${{ env.CMAKE_BUILD_DIR }}" && ctest -T Test -V
 
       - name: Publish Unit Test Results
         uses: scacap/action-surefire-report@v1
