@@ -39,3 +39,9 @@ jobs:
       - name: Test
         run: |
           cd "${{ env.CMAKE_BUILD_DIR }}" && ctest -V
+
+      - name: Publish Unit Test Results
+        uses: EnricoMi/publish-unit-test-result-action@v1
+        if: always()
+        with:
+          files: "${{ env.CMAKE_BUILD_DIR }}/Testing/**/*.xml"
