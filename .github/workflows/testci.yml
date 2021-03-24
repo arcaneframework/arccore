@@ -41,7 +41,7 @@ jobs:
           cd "${{ env.CMAKE_BUILD_DIR }}" && ctest -V
 
       - name: Publish Unit Test Results
-        uses: EnricoMi/publish-unit-test-result-action@v1
+        uses: scacap/action-surefire-report@v1
         if: always()
         with:
-          files: "${{ env.CMAKE_BUILD_DIR }}/Testing/**/*.xml"
+          report_paths: "${{ env.CMAKE_BUILD_DIR }}/Testing/**/*.xml"
