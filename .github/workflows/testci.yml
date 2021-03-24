@@ -30,7 +30,7 @@ jobs:
         run: |
           mkdir -p ${{ env.CMAKE_BUILD_DIR }}
           cmake --version
-          cmake -S "${{ github.workspace }}" -B "${{ env.CMAKE_BUILD_DIR }}" -G Ninja"
+          cmake -S "${{ github.workspace }}" -B "${{ env.CMAKE_BUILD_DIR }}" -G Ninja
 
       - name: Build
         run: |
